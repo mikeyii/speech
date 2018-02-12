@@ -1,22 +1,24 @@
-* {
+*, *:before, *:after {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: 'Helvetica', sans-serif;
+  font-family: sans-serif;
   color: #222;
+  min-width: 320px;
 }
 
 h1,h2,h3,h4,h5,h6 {
   color: #555;
+  text-transform: uppercase;
+  font-weight: normal;
 }
 
 .container {
   max-width: 1200px;
   padding: 0 20px;
   margin: 0 auto;
-  /*text-align: center;*/
 }
 
 .input {
@@ -32,28 +34,28 @@ h1,h2,h3,h4,h5,h6 {
   min-width: 100%;
 }
 
-.instructions {
+#instructions {
   padding: 20px;
   background-color: #eee;
   border-radius: 4px;
+  transition: background-color 270ms ease-in-out;
 }
 
-.instructions:empty {
+#instructions:empty {
   display: none;
 }
 
-.instructions.error {
+#instructions.error {
   background-color: #e77;
 }
 
-.instructions.danger {
+#instructions.danger {
   background-color: #ee7;
 }
 
-.instructions.success {
+#instructions.success {
   background-color: #6e9;
 }
-
 
 .input:focus {
   border-color: #37e;
@@ -64,26 +66,4 @@ h1,h2,h3,h4,h5,h6 {
   display: block;
   margin-bottom: 4px;
   color: #444;
-}
-
-.btn {
-  border: none;
-  display: block;
-  font-size: 15px;
-  width: 100%;
-  background-color: #37e;
-  color: #fff;
-  padding: 8px 32px;
-  border-radius: 5px;
-  outline: none;
-  transition: background-color 370ms ease-in-out;
-  margin-bottom: 8px;
-}
-
-.btn:hover,.btn:focus {
-  background-color: #26d;
-}
-
-.btn:active {
-  background-color: #15c;
 }
