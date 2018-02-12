@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Speech</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <form id="speech-form">
+      <legend><h2>Голос в текст</h2></legend>
+      <!-- <label for="voice">Выберете голос</label>
+      <select name="voice" id="voice" class="input"></select> -->
+      <label for="text" class="label">Текст</label>
+      <textarea name="text" class="input" rows="8" id="text"></textarea>
+      <!-- <button class="btn" type="submit">Произнести</button>
+      <button class="btn" id="stop">Стоп</button> -->
+    </form>
+    <!-- <hr> -->
+    <button class="btn" id="startRecord">Начать запись <i class="fa fa-microphone"></i></button>
+    <button class="btn" id="stopRecord">Закончить запись <i class="fa fa-microphone-slash"></i></button>
+    <div class="instructions"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

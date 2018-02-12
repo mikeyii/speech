@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Helvetica', sans-serif;
+  color: #222;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: #555;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+  /*text-align: center;*/
+}
+
+.input {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 8px 12px;
+  font-size: 15px;
+  margin-bottom: 12px;
+  max-width: 100%;
+  min-width: 100%;
+}
+
+.instructions {
+  padding: 20px;
+  background-color: #eee;
+  border-radius: 4px;
+}
+
+.instructions.error {
+  background-color: #e77;
+}
+
+.instructions.danger {
+  background-color: #ee7;
+}
+
+.instructions.success {
+  background-color: #6e9;
+}
+
+
+.input:focus {
+  border-color: #37e;
+}
+
+.label {
+  font-size: 16px;
+  display: block;
+  margin-bottom: 4px;
+  color: #444;
+}
+
+.btn {
+  border: none;
+  display: block;
+  font-size: 15px;
+  width: 100%;
+  background-color: #37e;
+  color: #fff;
+  padding: 8px 32px;
+  border-radius: 5px;
+  outline: none;
+  transition: background-color 370ms ease-in-out;
+  margin-bottom: 8px;
+}
+
+.btn:hover,.btn:focus {
+  background-color: #26d;
+}
+
+.btn:active {
+  background-color: #15c;
+}
