@@ -1,42 +1,12 @@
-// const form = document.getElementById('speech-form')
 const text = document.getElementById('text')
-// const voice = document.getElementById('voice')
-// const message = new SpeechSynthesisUtterance();
+
 const recognition = new webkitSpeechRecognition();
 recognition.continuous = true;
 
 let recognitionStarted = false;
-// const stopBtn = document.getElementById('stop');
 const startRecordBtn = document.getElementById('startRecord');
 const stopRecordBtn = document.getElementById('stopRecord');
 const instructions = document.querySelector('.instructions');
-// let voices = [];
-
-// speechSynthesis.onvoiceschanged = function() {
-//   const voices = speechSynthesis.getVoices();
-//   if (!voice.querySelector('option')) {
-//     speechSynthesis.getVoices().forEach((el, i) => {
-//       const option = document.createElement('option');
-//       option.value = i;
-//       option.textContent = `${el.name} ${el.lang}`;
-//       voice.appendChild(option);
-//     });
-//     voice.addEventListener('change', (ev) => {
-//       message.voice = voices[voice.value];
-//     })
-//   }
-// }
-
-
-// form.addEventListener('submit', (ev) => {
-//   ev.preventDefault();
-//   message.text = text.value;
-//   speechSynthesis.speak(message);
-// })
-
-// stopBtn.addEventListener('click', (ev) => {
-//   speechSynthesis.cancel();
-// })
 
 recognition.onstart = function() {
   instructions.className = 'instructions';
@@ -46,7 +16,7 @@ recognition.onstart = function() {
 
 recognition.onspeechend = function() {
   instructions.className = 'instructions';
-  instructions.textContent = 'Вы перестали говорить и запись голоса прекратилась';
+  instructions.textContent = 'Запись голоса преостановлена';
   instructions.classList.add('danger');
 }
 
@@ -66,12 +36,19 @@ recognition.onresult = function(event) {
   text.value += transcript;
 }
 
-startRecord.addEventListener('click', ev => {
-  recognition.start();
-  recognitionStarted = true;
-})
+// startRecord.addEventListener('click', ev => {
+//   recognition.start();
+// })
 
-stopRecordBtn.addEventListener('click', ev => {
-  recognitionStarted = false;
-  recognition.stop();
+// stopRecordBtn.addEventListener('click', ev => {
+//   recognition.abort();
+// })
+
+
+document.addEventListener('keyup', ev => {
+  if (ev.key === 'r') {
+    recognition.start();
+  } else if (ev.key === 's') {
+    recognition.abort();
+  }
 })
